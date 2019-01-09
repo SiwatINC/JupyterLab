@@ -6,4 +6,4 @@ RUN pip3 install jupyterhub
 RUN pip3 install --upgrade notebook
 RUN pip3 install oauthenticator jupyterhub-ldapauthenticator batchspawner 
 RUN pip3 install git+https://github.com/jupyterhub/wrapspawner
-CMD jupyterhub --ip 0.0.0.0 --port $port
+CMD cd /config && jupyterhub --ip 0.0.0.0 --port $port
