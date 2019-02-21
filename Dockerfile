@@ -7,5 +7,4 @@ RUN pip3 install jupyterhub
 RUN pip3 install --upgrade notebook
 RUN pip3 install oauthenticator jupyterhub-ldapauthenticator batchspawner 
 RUN pip3 install git+https://github.com/jupyterhub/wrapspawner
-RUN jupyter nbextension install --sys-prefix --py ipyparallel && jupyter nbextension enable --sys-prefix --py ipyparallel && jupyter serverextension enable --sys-prefix --py ipyparallel
 CMD rm ./initialize.sh | : && wget https://raw.githubusercontent.com/SiwatINC/JupyterLab/master/initialize.sh && chmod +x ./initialize.sh && ./initialize.sh
