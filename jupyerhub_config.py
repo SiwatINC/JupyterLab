@@ -42,7 +42,7 @@
 ## Grant admin users permission to access single-user servers.
 #  
 #  Users should be properly informed if this is enabled.
-#c.JupyterHub.admin_access = False
+c.JupyterHub.admin_access = True
 
 ## DEPRECATED since version 0.7.2, use Authenticator.admin_users instead.
 #c.JupyterHub.admin_users = set()
@@ -77,16 +77,7 @@
 #  - takes two arguments: (handler, data),
 #    where `handler` is the calling web.RequestHandler,
 #    and `data` is the POST form data from the login page.
-#c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
-
-## The base URL of the entire application.
-#  
-#  Add this to the beginning of all JupyterHub URLs. Use base_url to run
-#  JupyterHub within an existing website.
-#  
-#  .. deprecated: 0.9
-#      Use JupyterHub.bind_url
-#c.JupyterHub.base_url = '/'
+c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
 
 ## The public facing URL of the whole JupyterHub application.
 #  
@@ -104,7 +95,7 @@
 #  only shutdown the Hub, leaving everything else running.
 #  
 #  The Hub should be able to resume from database state.
-#c.JupyterHub.cleanup_proxy = True
+c.JupyterHub.cleanup_proxy = True
 
 ## Whether to shutdown single-user servers when the Hub shuts down.
 #  
@@ -115,7 +106,7 @@
 #  shutdown the Hub, leaving everything else running.
 #  
 #  The Hub should be able to resume from database state.
-#c.JupyterHub.cleanup_servers = True
+c.JupyterHub.cleanup_servers = True
 
 ## Maximum number of concurrent users that can be spawning at a time.
 #  
@@ -135,13 +126,13 @@
 #c.JupyterHub.concurrent_spawn_limit = 100
 
 ## The config file to load
-#c.JupyterHub.config_file = 'jupyterhub_config.py'
+c.JupyterHub.config_file = '/config/jupyterhub_config.py'
 
 ## DEPRECATED: does nothing
 #c.JupyterHub.confirm_no_ssl = False
 
 ## Number of days for a login cookie to be valid. Default is two weeks.
-#c.JupyterHub.cookie_max_age_days = 14
+c.JupyterHub.cookie_max_age_days = 14
 
 ## The cookie secret to use to encrypt cookies.
 #  
@@ -154,7 +145,7 @@
 #c.JupyterHub.cookie_secret_file = 'jupyterhub_cookie_secret'
 
 ## The location of jupyterhub data files (e.g. /usr/local/share/jupyterhub)
-#c.JupyterHub.data_files_path = '/usr/local/share/jupyterhub'
+c.JupyterHub.data_files_path = '/config/data'
 
 ## Include any kwargs to pass to the database connection. See
 #  sqlalchemy.create_engine for details.
@@ -768,7 +759,7 @@
 #  Admin access should be treated the same way root access is.
 #  
 #  Defaults to an empty set, in which case no user has admin access.
-#c.Authenticator.admin_users = set()
+c.Authenticator.admin_users = {'admin'}
 
 ## Automatically begin the login process
 #  
