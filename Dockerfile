@@ -1,5 +1,6 @@
 FROM siwatinc/nodejsubuntu_base_image
 RUN apt-get -y install python3.3 python-pip python3-pip
+RUN pip install --upgrade pip
 RUN npm install -g configurable-http-proxy
 RUN pip install jupyterlab
 RUN pip3 install jupyterhub
