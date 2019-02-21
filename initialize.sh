@@ -1,6 +1,7 @@
 echo "Starting Container Initialization Script."
 if [ -z "$(ls -A /config)" ]; then
    echo "Initializing . . ."
+   mkdir -p /config/data
    jupyterhub --generate-config -f /config/jupyerhub_config.py
    echo "c.JupyterHub.config_file = 'jupyterhub_config.py'" >> /config/jupyterhub_config.py
    echo $username:$password | chpasswd
