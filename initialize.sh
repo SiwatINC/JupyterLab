@@ -4,7 +4,7 @@ if [ -z "$(ls -A /config)" ]; then
    pip install ipyparallel
    mkdir -p /config/data
    cd /config && wget 'https://raw.githubusercontent.com/SiwatINC/JupyterLab/master/jupyerhub_config.py'
-   echo admin:$password | chpasswd
+   sudo echo admin:$password | chpasswd
    cd /config && jupyterhub --ip 0.0.0.0 --port $port --db=$db --config='/config/jupyterhub_config.py'
    exit 0
 else
