@@ -10,7 +10,7 @@ if [ -z "$(ls -A /config)" ]; then
 else
    echo "Already Initiated, Starting JupyterLab"
    pip install ipyparallel
-   echo admin:$password | chpasswd
+   sudo echo admin:$password | chpasswd
    cd /config && jupyterhub --ip 0.0.0.0 --port $port --db=$db --config='/config/jupyterhub_config.py'
    exit 0
 fi
